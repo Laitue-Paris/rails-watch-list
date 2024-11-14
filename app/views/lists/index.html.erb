@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.britannica.com/95/143895-050-FA4BAC47/Billboards-Broadway-New-York-City-Times-Square.jpg);">
+  <div class="container">
+    <h1 class="text-center">All your lists</h1>
+  </div>
+</div>
+
+
+<div class="container mt-4 mx-auto">
+  <div class="cards">
+    <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static.displate.com/280x392/displate/2019-10-14/4522281a7048b8e5e3594cd9b82ec385_721a66feb33f2c104dce0e243a311af8.jpg)">
+      <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
+</div>

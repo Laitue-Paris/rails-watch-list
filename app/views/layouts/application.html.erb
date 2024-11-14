@@ -8,9 +8,34 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="https://img.freepik.com/vecteurs-libre/conception-banniere-journee-nationale-du-pop-corn_1308-122939.jpg?t=st=1731590828~exp=1731594428~hmac=4f53172699b3dd23af66d5b962366023f5b08d572c82fc63076e0ef4937ae70c&w=740" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to 'My lists', lists_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Add a list', new_list_path, class:"nav-link" %>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
     <%= yield %>
   </body>
 </html>

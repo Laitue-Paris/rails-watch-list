@@ -1,0 +1,13 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://leroux.ca/wtl-content/uploads/2024/01/2023-Watchlist-1200x764.jpg)">
+  Add a new list
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 m-auto bg-light rounded">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
