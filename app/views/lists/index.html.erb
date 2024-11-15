@@ -8,7 +8,13 @@
 <div class="container mt-4 mx-auto">
   <div class="cards">
     <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>)">
+    <% if list.photo.attached?  %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      url(<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>)">
+    <% else %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbRHjuatFv57b0J0tucM5vRQrVpw6DOXhJcAfHoxcT4ni339ANSDlrGx_AZt3DyxFbPvY&usqp=CAU)">
+    <% end %>
       <%= link_to list.name, list_path(list) %>
       </div>
     <% end %>

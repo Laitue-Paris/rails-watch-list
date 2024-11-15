@@ -1,4 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c8.alamy.com/compfr/pxnb4h/chauffeur-de-taxi-original-movie-poster-pxnb4h.jpg);">
+<% if @list.photo.attached?  %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>);">
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbRHjuatFv57b0J0tucM5vRQrVpw6DOXhJcAfHoxcT4ni339ANSDlrGx_AZt3DyxFbPvY&usqp=CAU)">
+<% end %>
   <div class="container">
     <h1 class="text-center"><%= @list.name %></h1>
     <div class="text-center mt-3">
@@ -10,7 +14,7 @@
 <div class="container mt-4 ">
   <div class="row m-3">
     <% @list.movies.each do |movie| %>
-      <div class="col-3 card m-auto h-100" style="width: 18rem;">
+      <div class="col-3 card m-auto" style="width: 18rem;">
         <img src="<%= movie.poster_url%>" class="card-img-top" alt="poster of <%= movie.title %>">
         <div class="card-body">
           <h5 class="card-title"><%= movie.title %></h5>
