@@ -1,7 +1,25 @@
 .banner {
   background-size: cover;
   background-position: center;
+  position: relative;
   padding: 150px 0;
+  i {
+    font-size: 30px;
+    color: white;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  #edit {
+    position: absolute;
+    top: 30px;
+    right: 90px;
+  }
+  #delete {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+  }
 }
 
 .banner h1 {

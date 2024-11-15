@@ -1,13 +1,15 @@
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://leroux.ca/wtl-content/uploads/2024/01/2023-Watchlist-1200x764.jpg)">
   Add a new list
 </div>
-<div class="container">
+<div class="container mt-3">
   <div class="row">
-    <div class="col-6 m-auto bg-light rounded">
+    <div class="col-4 m-auto bg-light rounded p-2">
       <%= simple_form_for @list do |f| %>
         <%= f.input :name %>
         <%= f.input :photo, as: :file %>
-        <%= f.button :submit %>
+        <div class="text-center">
+        <%= f.button :submit, class: "btn btn-primary" %>
+        </div>
       <% end %>
     </div>
   </div>

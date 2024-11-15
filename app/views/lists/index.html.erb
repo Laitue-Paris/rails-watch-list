@@ -1,11 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.britannica.com/95/143895-050-FA4BAC47/Billboards-Broadway-New-York-City-Times-Square.jpg);">
   <div class="container">
     <h1 class="text-center">All your lists</h1>
+    <div class="text-center mt-3">
+      <%= link_to "Add a list", new_list_path, class:"btn btn-primary" %>
+    </div>
   </div>
 </div>
 
 
-<div class="container mt-4 mx-auto">
+<div class="container my-4 mx-auto">
   <div class="cards">
     <% @lists.each do |list| %>
     <% if list.photo.attached?  %>

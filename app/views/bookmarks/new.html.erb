@@ -1,6 +1,16 @@
-<h1>Bookmarks#new</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1429764305/fr/vectoriel/bande-de-film-vierge-isol%C3%A9e-sur-le-fond-blanc.jpg?s=612x612&w=0&k=20&c=ZTTjfS8JOINgmbw2GCRYqnYGtLQllvFAkE9Td6OZSIg=)">
+  Add a bookmark
+</div>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-4 m-auto bg-light rounded p-2">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie %>
+        <%= f.input :comment %>
+        <div class="text-center">
+        <%= f.button :submit, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
